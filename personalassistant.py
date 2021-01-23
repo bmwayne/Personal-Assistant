@@ -11,4 +11,4 @@ while True:
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
-
+#randomtext
