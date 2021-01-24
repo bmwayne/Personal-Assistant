@@ -21,7 +21,7 @@ while True:
                 window.geometry('600x600')
 
                 try:
-                    wolfid = 'UY2U9Q-PKAY23Y5TJ'
+                    wolfid = 'Enter your API-Key'
                     client = wolframalpha.Client(wolfid)
                     res = client.query(text)
                     answer = next(res.results).text
