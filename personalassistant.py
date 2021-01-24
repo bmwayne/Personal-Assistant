@@ -19,6 +19,7 @@ while True:
             else:
                 window = Tk()
                 window.geometry('600x600')
+
                 try:
                     wolfid = 'UY2U9Q-PKAY23Y5TJ'
                     client = wolframalpha.Client(wolfid)
@@ -26,19 +27,20 @@ while True:
                     answer = next(res.results).text
                     print('Viola! Got an answer from WolframAlpha')
                     print(answer)
-
-                    label1 = Label(window, justify = LEFT, compound = CENTER, padx = 10, text = answer, font = 'times 15 bold' )
+                    label1 = Label(window, justify = LEFT, compound = CENTER, padx = 10, pady = 10, text = answer, font = 'times 15 bold',bg = 'yellow')
+                    label1.place(x=100,y=100)
                     label1.pack()
                     window.after(5000, lambda :window.destroy())
                     window.mainloop()
-                except:
+                except Exception as e:
                     print('WolframAlpha could not find anything. Let\'s try Wikipedia!')
                     wikianswer = wikipedia.summary(text)
 
-                    label1 = Label(window, justify=LEFT, compound=CENTER, padx=10, text=wikianswer, font='times 15 bold')
+                    label1 = Label(window, justify=LEFT, compound=CENTER, padx=10, pady=10, text=wikianswer, font='times 15 bold',bg = 'yellow')
+                    label1.place(x=100,y=100)
                     label1.pack()
                     window.after(50000, lambda: window.destroy())
                     window.mainloop()
-        except:
+        except Exception as e:
             answer = 'Sorry I zoned out.. What did you say again?'
             print(answer)
