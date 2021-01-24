@@ -2,6 +2,7 @@ import wolframalpha
 import wikipedia
 from tkinter import *
 import speech_recognition as sr
+import os
 
 while True:
     r = sr.Recognizer()
@@ -16,12 +17,20 @@ while True:
             if text == 'stop':
                 print('Thank you using my Personal Assistant')
                 break
+            elif text == 'opendota':
+                os.startfile('dota2.bat')
+            elif text == 'let\'s go to war':
+                os.startfile('cod.bat')
+            elif text == 'open Chrome':
+                os.startfile('chrome.bat')
+            elif text == 'open firefox':
+                os.startfile('firefox.bat')
             else:
                 window = Tk()
                 window.geometry('600x600')
 
                 try:
-                    wolfid = 'Enter your API here'
+                    wolfid = 'UY2U9Q-PKAY23Y5TJ'
                     client = wolframalpha.Client(wolfid)
                     res = client.query(text)
                     answer = next(res.results).text
